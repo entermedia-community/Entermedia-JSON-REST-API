@@ -1,13 +1,61 @@
 FORMAT: 1A
-HOST: https://www.exacttargetapis.com
+HOST: https://demo.entermediasoftware.com
 
 # Content
-This API will allow to interact with Content inside of the ExactTarget Marketing Cloud.
+This API will allow JSON Interaction with the EnterMedia Media Database
+
+# Group Authentication
+
+This API will allow you to authenticate and retrieve the Entermedia Key for future requests.
+
+## Authenticate [/mediadb/json/users/authenticate]
+
+### Authenticate as user [POST]
+
++ Parameters 
+
+    + username (required) ... User name
+    + password (required) ... User name
+    
+
++ Request (application/json)
+
+    {
+    "username": "admin",
+    "password": "admin"
+    }
+
++ Response 200 (application/json)
+    
+   
+    {
+        "authenticated": true,
+        "user":"admin",
+        "entermediakey": "$entermediakey"
+    }
+
+
++ Model (application/json)
+    
+   + Body
+
+            {
+                "username": "admin",
+                "password": "admin"
+            }
+
+
+
+
+
+
+  
+
 
 # Group Assets
 Notes related resources of the **Assets API**
 
-## Asset [/assets/{id}]
+## Asset [/mediadb/json/assets/{id}]
 A single Asset object.
 
 + Parameters
@@ -622,607 +670,6 @@ A collection of Asset objects.
     [Assets Collection][]
 
 
-# Group Asset Types
-Notes related resources of the **Asset Types API**
-
-## Asset Type [/assetTypes/{id}]
-A single Asset Type object.
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Asset Type to perform action with. Has example value.
-
-### Retrieve an Asset Type [GET]
-+ Response 200 (application/json)    
-    
-        {
-            "id": 10,
-            "name": "article",
-            "classification": "content",
-            "extensions": [],
-            "fields": [
-                {
-                    "id": 41,
-                    "name": "author",
-                    "label": "Author",
-                    "dataType": "Text",
-                    "renderType": "Text",
-                    "length": 100,
-                    "custom": false,
-                    "searchable": true
-                },
-                {
-                    "id": 46,
-                    "name": "body",
-                    "label": "Body",
-                    "dataType": "Text",
-                    "renderType": "HTML",
-                    "length": 0,
-                    "custom": false,
-                    "searchable": true
-                },
-                {
-                    "id": 47,
-                    "name": "summary",
-                    "label": "Summary",
-                    "dataType": "Text",
-                    "renderType": "HTML",
-                    "length": 500,
-                    "custom": false,
-                    "searchable": true
-                },
-                {
-                    "id": 51,
-                    "name": "title",
-                    "label": "Title",
-                    "dataType": "Text",
-                    "renderType": "Text",
-                    "length": 120,
-                    "custom": false,
-                    "searchable": true
-                },
-                {
-                    "id": 60,
-                    "name": "link",
-                    "label": "Link",
-                    "dataType": "List",
-                    "renderType": "Asset",
-                    "length": 0,
-                    "custom": false,
-                    "searchable": false
-                },
-                {
-                    "id": 61,
-                    "name": "image",
-                    "label": "Image",
-                    "dataType": "List",
-                    "renderType": "Asset",
-                    "length": 0,
-                    "custom": false,
-                    "searchable": false
-                }
-            ]
-        }
-
-## Asset Types Collection [/assetTypes]
-A collection of Asset Type objects.
-
-+ Model (application/json)
-
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            { 
-                "count": 3,
-                "pageSize": 50,
-                "page": 1,
-                "items": [
-                    {
-                        "id": 1,
-                        "name": "image",
-                        "classification": "file",
-                        "extensions": [
-                            "bmp",
-                            "dng",
-                            "gif",
-                            "ico",
-                            "jpg",
-                            "jpeg",
-                            "png",
-                            "tif",
-                            "tiff"
-                        ],
-                        "protocols": [],
-                        "fields": [
-                            {
-                                "id": 35,
-                                "name": "altText",
-                                "label": "Alt Text",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 150,
-                                "custom": false,
-                                "searchable": true
-                            }
-                        ]
-                    },
-                    {
-                        "id": 10,
-                        "name": "article",
-                        "classification": "content",
-                        "extensions": [],
-                        "protocols": [],
-                        "fields": [
-                            {
-                                "id": 41,
-                                "name": "author",
-                                "label": "Author",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 100,
-                                "custom": false,
-                                "searchable": true
-                            },
-                            {
-                                "id": 46,
-                                "name": "body",
-                                "label": "Body",
-                                "dataType": "Text",
-                                "renderType": "HTML",
-                                "length": 0,
-                                "custom": false,
-                                "searchable": true
-                            },
-                            {
-                                "id": 47,
-                                "name": "summary",
-                                "label": "Summary",
-                                "dataType": "Text",
-                                "renderType": "HTML",
-                                "length": 500,
-                                "custom": false,
-                                "searchable": true
-                            },
-                            {
-                                "id": 51,
-                                "name": "title",
-                                "label": "Title",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 120,
-                                "custom": false,
-                                "searchable": true
-                            },
-                            {
-                                "id": 60,
-                                "name": "link",
-                                "label": "Link",
-                                "dataType": "List",
-                                "renderType": "Asset",
-                                "length": 0,
-                                "custom": false,
-                                "searchable": false
-                            },
-                            {
-                                "id": 61,
-                                "name": "image",
-                                "label": "Image",
-                                "dataType": "List",
-                                "renderType": "Asset",
-                                "length": 0,
-                                "custom": false,
-                                "searchable": false
-                            }
-                        ]
-                    },
-                    {
-                        "id": 40,
-                        "name": "webUrl",
-                        "classification": "link",
-                        "extensions": [],
-                        "protocols": [
-                            "http",
-                            "https",
-                            "ftp",
-                            "file"
-                        ],
-                        "fields": [
-                            {
-                                "id": 79,
-                                "name": "url",
-                                "label": "URL",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 0,
-                                "custom": false,
-                                "searchable": true
-                            },
-                            {
-                                "id": 82,
-                                "name": "title",
-                                "label": "Title",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 100,
-                                "custom": false,
-                                "searchable": true
-                            },
-                            {
-                                "id": 84,
-                                "name": "target",
-                                "label": "Target",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 100,
-                                "custom": false,
-                                "searchable": false
-                            },
-                            {
-                                "id": 90,
-                                "name": "linkText",
-                                "label": "Link Text",
-                                "dataType": "Text",
-                                "renderType": "Text",
-                                "length": 500,
-                                "custom": false,
-                                "searchable": true
-                            }
-                        ]
-                    }
-                ]
-            }
-
-### Retrieve All Asset Types [GET]
-+ Parameters
-    + pageSize (optional, number, `50`) ... Numeric size of the Asset Types collection to return on each page. Default is `50`.
-    + page (optional, number, `2`) ... Numeric index of the page to return from the total result set. Default is `1`.
-    
-+ Response 200 (application/json)
-    
-    [Asset Types Collection][]
-
-
-# Group Asset Type Fields
-Notes related resources of the **Asset Type Fields API**
-
-## Field [/fields/{id}]
-A single Field object.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Field.
-
-+ Model (application/json)
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            {
-                "id": 41,
-                "name": "author",
-                "label": "Author",
-                "dataType": "Text",
-                "renderType": "Text",
-                "length": 100,
-                "custom": false,
-                "searchable": true
-            }
-
-### Retrieve a Field [GET]
-+ Response 200 (application/json)    
-    
-    [Field][]
-
-### Update a Field [PUT]
-+ Request
-    
-    [Field][]
-
-+ Response 200 (application/json)    
-    
-    [Field][]
-
-### Delete a Field [DELETE]
-+ Response 204    
-
-## Fields Collection [/fields]
-A collection of Field objects.
-
-+ Model (application/json)
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            { 
-                "count": 3,
-                "pageSize": 50,
-                "page": 1,
-                "items": [
-                    {
-                        "id": 47,
-                        "name": "summary",
-                        "label": "Summary",
-                        "dataType": "Text",
-                        "renderType": "HTML",
-                        "length": 500,
-                        "custom": false,
-                        "searchable": true
-                    },
-                    {
-                        "id": 51,
-                        "name": "title",
-                        "label": "Title",
-                        "dataType": "Text",
-                        "renderType": "Text",
-                        "length": 120,
-                        "custom": false,
-                        "searchable": true
-                    },
-                    {
-                        "id": 60,
-                        "name": "link",
-                        "label": "Link",
-                        "dataType": "List",
-                        "renderType": "Asset",
-                        "length": 0,
-                        "custom": false,
-                        "searchable": false
-                    }
-                ]
-            }
-
-### Create a Field [POST]
-+ Request (application/json)
-    
-    + Body
-        
-            {
-                "name": "example",
-                "label": "Example",
-                "dataType": "Text",
-                "renderType": "Text",
-                "length": 100,
-                "custom": true,
-                "searchable": true
-            }
-
-+ Response 200 (application/json)    
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            {
-                "id": 121,
-                "name": "example",
-                "label": "Example",
-                "dataType": "Text",
-                "renderType": "Text",
-                "length": 100,
-                "custom": true,
-                "searchable": true
-            }
-
-### Retrieve All Fields [GET]
-+ Parameters
-    + pageSize (optional, number, `100`) ... Numeric size of the Fields collection to return on each page. Default is `50`.
-    + page (optional, number, `3`) ... Numeric index of the page to return from the total result set. Default is `1`.
-
-+ Response 200 (application/json) 
-
-    [Fields Collection][]
-
-
-# Group Tags
-Notes related resources of the **Tags API**
-
-## Tag [/tags/{id}]
-A single Tag object.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Tag.
-
-+ Model (application/json)
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            {
-                "id": 12,
-                "name": "holiday",
-                "description": "Anything Holiday-related",
-                "createdDate": "2014-01-30T11:18:31-06:00",
-                "createdBy": 1097912,
-                "modifiedDate": "2014-01-31T10:13:53-06:00",
-                "modifiedBy": 1093028
-            }
-
-### Retrieve a Tag [GET]
-+ Response 200 (application/json)    
-    
-    [Tag][]
-
-### Update a Tag [PUT]
-+ Request
-    
-    [Tag][]
-
-+ Response 200 (application/json)    
-    
-    [Tag][]
-
-### Delete a Tag [DELETE]
-+ Response 204    
-
-## Tags Collection [/tags]
-A collection of Tag objects.
-
-+ Model (application/json)
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            { 
-                "count": 2,
-                "pageSize": 50,
-                "page": 1,
-                "items": [
-                    {
-                        "id": 12,
-                        "name": "holiday",
-                        "description": "Anything Holiday-related",
-                        "createdDate": "2014-01-30T11:18:31-06:00",
-                        "createdBy": 1097912,
-                        "modifiedDate": "2014-01-31T10:13:53-06:00",
-                        "modifiedBy": 1093028
-                    },
-                    {
-                        "id": 18,
-                        "name": "blue",
-                        "description": "Contains the color blue",
-                        "createdDate": "2014-01-30T11:18:31-06:00",
-                        "createdBy": 1097912,
-                        "modifiedDate": "2014-01-31T10:13:53-06:00",
-                        "modifiedBy": 1093028
-                    }
-                ]
-            }
-
-### Create a Tag [POST]
-+ Request (application/json)
-    
-    + Body
-        
-            {
-                "name": "holiday",
-                "description": "Anything Holiday-related"
-            }
-
-+ Response 200 (application/json)    
-    
-    [Tag][]
-
-### Retrieve All Tags [GET]
-+ Parameters
-    + pageSize (optional, number, `100`) ... Numeric size of the Tags collection to return on each page. Default is `50`.
-    + page (optional, number, `3`) ... Numeric index of the page to return from the total result set. Default is `1`.
-
-+ Response 200 (application/json) 
-
-    [Tags Collection][]
-
-## Tag Association [/assets/{id}/tags/{tagId}]
-A single Tag object on a given Asset.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Asset.
-    + tagId (number, `12`) ... The id of the Tag.
-
-### Associate a Tag with an Asset [POST]
-+ Response 200 (application/json)    
-    
-    [Tag][]
-
-### Dissociate a Tag from an Asset [DELETE]
-+ Response 200 (application/json)    
-    
-    [Tag][]
-
-## Tags Collection Association [/assets/{id}/tags]
-A collection of Tag objects on a given Asset.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Asset.
-
-### Retrieve All Tags Associated with an Asset [GET]
-+ Response 200 (application/json)    
-    
-    [Tags Collection][]
-
-### Associate a Collection of Tags with an Asset [POST]
-+ Request (application/json)
-    
-    + Body
-        
-            {
-                "tags": [
-                    {
-                        "id": 12,
-                        "name": "holiday",
-                        "description": "Anything Holiday-related"
-                    },
-                    {
-                        "id": 18,
-                        "name": "blue",
-                        "description": "Contains the color blue"
-                    }
-                ]
-            }
-
-+ Response 200 (application/json)    
-    
-    [Tags Collection][]
-
-## Tagged Assets [/assets/tags/{id}]
-A collection of Assets associated with a given Tag.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Tag.
-
-### Retrieve All Assets Associated with a Tag [GET]
-+ Response 200 (application/json)    
-    
-    [Assets Collection][]
-
-
-# Group Favorites
-Notes related resources of the **Favorites API**
-
-## Favorite [/assets/{id}/favorite]
-An Asset can be marked or unmarked as Favorite.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Asset.
-
-### Favorite an Asset [POST]
-+ Response 200 (application/json)    
-    
-    [Asset][]
-
-### Un-Favorite an Asset [DELETE]
-+ Response 200 (application/json)    
-    
-    [Asset][]
-
-## Favorite Assets [/assets/favorite]
-A collection of Favorite Assets.
-
-### Retrieve All Favorite Assets [GET]
-+ Response 200 (application/json)    
-    
-    [Assets Collection][]
-
 
 # Group Upload
 Notes related resources of the **Upload API**
@@ -1295,114 +742,12 @@ An Asset created from downloading an externally-hosted file.
 
 + Response 201 (application/json)
 
-    [Asset][]
-
-
-# Group Publish
-Notes related resources of the **Publish API**
-
-## Publish [/assets/{id}/publish]
-An Asset must be published to Akamai before it can be used in a message.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Asset.
-
-+ Model (application/json)
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            {
-                "id": 401,
-                "createdDate": "2014-01-27T10:13:53-06:00",
-                "createdBy": 1093028,
-                "status": "In Progress",
-                "startDate": "2014-01-28T08:42:13-06:00"
-            }
-
-### Retrieve the Publish Status [GET]
-Check if an Asset has been successfully published to Akamai, or if it is still in progress.
-
-+ Response 200
-    
-    + Body
-
-            {
-                "id": 401,
-                "createdDate": "2014-01-27T10:13:53-06:00",
-                "createdBy": 1093028,
-                "status": "In Progress",
-                "startDate": "2014-01-28T08:42:13-06:00"
-            }
-
-### Publish an Asset [POST]
-Publish a given Asset to Akamai.
-
-+ Response 200
-    
-    [Asset][]
-
-### Unpublish an Asset [DELETE]
-Remove a given Asset from Akamai.
-
-+ Response 200
-        
-    [Asset][]
-
-## Published Assets [/assets/published]
-A collection of Published Assets.
-
-### Retrieve All Published Assets [GET]
-+ Response 200 (application/json)    
-    
-    [Assets Collection][]
-
-
-# Group History
-Notes related resources of the **History API**
-
-## History Collection [/assets/{id}/history]
-History of events on an Asset.
-
-+ Parameters
-    + id (number, `1`) ... The id of the Asset.
-
-+ Model (application/json)
-    
-    + Headers
-    
-            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
-            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
-
-    + Body
-    
-            { 
-                "count": 2,
-                "pageSize": 50,
-                "page": 1,
-                "items": [
-                    {
-                        "id": 503,
-                        "createdBy": 1093028,
-                        "createdDate": "2014-01-28T08:42:13-06:00"
-                    },
-                    {
-                        "id": 511,
-                        "createdBy": 1094771,
-                        "createdDate": "2014-01-29T14:11:52-06:00"
-                    }
-                ]
-            }
 
 
 # Group Search
 Notes related resources of the **Search API**
 
-## Search [/search]
+## Search [/mediadb/json/search/asset]
 A new Search query that returns a collection of Assets.
 
 + Model (application/json)
@@ -1415,14 +760,7 @@ A new Search query that returns a collection of Assets.
     + Body
     
             { 
-                "id": 39,
-                "name": "Jacket Hero Images",
-                "owner": 1097912,
-                "createdDate": "2014-01-31T10:13:53-06:00",
-                "createdBy": 1097912,
-                "modifiedDate": "2014-01-31T10:13:53-06:00",
-                "modifiedBy": 1097912,
-                "grouping": "and",
+                
                 "query": [
                     {
                         "field": "name",
@@ -1462,66 +800,6 @@ A new Search query that returns a collection of Assets.
 + Response 200 (application/json)    
     
     [Assets Collection][]
-
-### Save a New Search [POST]
-+ Request (application/json)
-
-    + Body
-
-            { 
-                "name": "Jacket Hero Images",
-                "grouping": "and",
-                "query": [
-                    {
-                        "field": "name",
-                        "operator": "startsWith",
-                        "grouping": "or",
-                        "values": [
-                            "hero",
-                            "man"
-                        ]
-                    },
-                    {
-                        "field": "longdescription",
-                        "operator": "contains",
-                        "grouping": "or",
-                        "values": [
-                            "jacket"
-                        ]
-                    },
-                    {
-                        "field": "tags",
-                        "operator": "contains",
-                        "grouping": "or",
-                        "values": [
-                            "jacket"
-                        ]
-                    }
-                ]
-            }
-
-+ Response 200 (application/json)    
-    
-    [Search][]
-
-## Saved Search [/search/{id}]
-A saved Search query that returns a collection of Assets.
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the saved Search to execute. Has example value.
-
-### Retrieve a Search Result Set [GET]
-+ Response 200 (application/json)
-    
-    [Assets Collection][]
-
-### Update a Saved Search [PUT]
-+ Response 200 (application/json)
-    
-    [Assets Collection][]
-
-### Delete a Saved Search [DELETE]
-+ Response 204
 
 
 # Group Categories
@@ -1633,3 +911,7 @@ A collection of Category objects.
 + Response 200 (application/json) 
 
     [Categories Collection][]
+    
+    
+    
+    
