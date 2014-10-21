@@ -1,7 +1,7 @@
 FORMAT: 1A
 HOST: https://demo.entermediasoftware.com
 
-# Content
+# EnterMedia Api
 This API will allow JSON Interaction with the EnterMedia Media Database
 
 # Group Authentication
@@ -228,6 +228,33 @@ A single Asset object.
 
 # Group data
 
+Notes related resources of the Data Api
+
+## Data [/mediadb/json/search/data] 
+
+### Data Search [POST]
+
+
++ Model (application/json)
+
+    + Body
+        {
+        "searchtype":"convertpreset",
+                "page": 1,
+                "query": [
+                    {
+                        "field": "id",
+                        "operator": "matches",
+                        
+                        "values": [
+                            "*"                            
+                        ]
+                    }
+                    
+                ]
+        }
+
++ Response 201 (application/json)
 
 
 ## Assets Collection [/assets]
