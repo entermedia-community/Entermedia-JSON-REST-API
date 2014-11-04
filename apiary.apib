@@ -20,19 +20,19 @@ This API will allow you to authenticate and retrieve the Entermedia Key for futu
 
 + Request (application/json)
 
-    {
-    "id": "admin",
-    "password": "admin"
-    }
+        {
+            "id": "admin",
+            "password": "admin"
+        }
 
 + Response 200 (application/json)
     
    
-    {
-        "authenticated": true,
-        "user":"admin",
-        "entermediakey": "$entermediakey"
-    }
+        {
+            "authenticated": true,
+            "user":"admin",
+            "entermediakey": "$entermediakey"
+        }
 
 
 + Model (application/json)
@@ -383,209 +383,208 @@ The Data API lets you access, create search and update all data within the syste
 
 + Response 200 (application/json)
 
-{
-totalhits: 15,
-searchtype: "convertpreset",
-page: 1,
--results: [
--{
-id: "previewffmpegthumb",
-name: "Video Thumb",
-inputtype: "video",
-outputfile: "image1024x768.jpg",
-fileexportformat: "${filename}1024x768.jpg",
-type: "ffmpegimage",
-guid: "previewffmpegthumb",
-onimport: "true",
-ordering: "10",
-display: "true",
-singlepage: "true"
-},
--{
-id: "1",
-name: "Video HQ MP4",
-inputtype: "video",
-outputfile: "video1080p.mp4",
-fileexportformat: "${filename}1080p.mp4",
-type: "ffmpeg",
-guid: "ffmpeg1080p",
-onimport: "ffmpeg1080p",
-ordering: "09",
-display: "true",
-singlepage: "true"
-},
--{
-id: "2",
-name: "Video HQ AVI",
-inputtype: "video",
-outputfile: "video720p.avi",
-fileexportformat: "${filename}HQ.avi",
-type: "ffmpeg",
-guid: "ffmpeg720p",
-onimport: "ffmpeg720p",
-ordering: "08",
-display: "true",
-singlepage: "true"
-},
--{
-id: "previewflv",
-name: "Video FLV",
-inputtype: "video",
-outputfile: "preview.flv",
-fileexportformat: "${filename}.flv",
-type: "ffmpeg",
-guid: "ffmpegpreviewmp4",
-onimport: "ffmpegpreviewmp4",
-ordering: "07",
-display: "true",
-singlepage: "true"
-},
--{
-id: "imagepreviewfpo",
-name: "Image Large FPO",
-inputtype: "image",
-outputfile: "image1024x768wm.jpg",
-fileexportformat: "${filename}1024x768-fpo.jpg",
-type: "imagemagick",
-guid: "imagepreviewfpo",
-onimport: "false",
-ordering: "06",
-display: "true",
-singlepage: "true"
-},
--{
-id: "mp3audio",
-name: "Mp3 Audio",
-inputtype: "audio",
-outputfile: "audio.mp3",
-fileexportformat: "${filename}.mp3",
-type: "audio",
-guid: "mp3audio",
-onimport: "true",
-ordering: "06",
-display: "06",
-singlepage: "06"
-},
--{
-id: "previewffmpeg",
-name: "Video MP4 Preview",
-inputtype: "video",
-outputfile: "video.mp4",
-fileexportformat: "${filename}proxy.mp4",
-type: "ffmpeg",
-guid: "ffmpeg480p",
-onimport: "true",
-ordering: "06",
-display: "true",
-singlepage: "true"
-},
--{
-id: "cropdocument",
-name: "Document Crop",
-inputtype: "document",
-outputfile: "image110x62cropped.jpg",
-fileexportformat: "${filename}110x62cropped.jpg",
-type: "imagemagick",
-guid: "imagecrop",
-onimport: "true",
-ordering: "05",
-display: "true",
-singlepage: "true"
-},
--{
-id: "imagecrop",
-name: "Small Crop",
-inputtype: "image",
-outputfile: "image110x62cropped.jpg",
-fileexportformat: "${filename}110x62cropped.jpg",
-type: "imagemagick",
-guid: "imagecrop",
-onimport: "true",
-ordering: "05",
-display: "true",
-singlepage: "true"
-},
--{
-id: "largedocument",
-name: "Document Preview",
-inputtype: "document",
-outputfile: "image1024x768.jpg",
-fileexportformat: "${filename}.jpg",
-type: "imagemagick",
-guid: "imagepreview",
-onimport: "true",
-ordering: "04",
-display: "true",
-singlepage: "true"
-},
--{
-id: "thumbimage",
-name: "Image Thumbnail",
-inputtype: "image",
-outputfile: "image200x200.jpg",
-fileexportformat: "${filename}200x200.jpg",
-type: "imagemagick",
-guid: "imagethumb",
-onimport: "true",
-ordering: "04",
-display: "true",
-singlepage: "true"
-},
--{
-id: "mediumimage",
-name: "Image Medium",
-inputtype: "image",
-outputfile: "image550x350.jpg",
-fileexportformat: "${filename}550x350.jpg",
-type: "imagemagick",
-guid: "imagemedium",
-onimport: "true",
-ordering: "03",
-display: "true",
-singlepage: "true"
-},
--{
-id: "largeimage",
-name: "Image Large",
-inputtype: "image",
-outputfile: "image1024x768.jpg",
-fileexportformat: "${filename}1024x768.jpg",
-type: "imagemagick",
-guid: "imagepreview",
-onimport: "true",
-ordering: "02",
-display: "true",
-singlepage: "true"
-},
--{
-id: "attachments",
-name: "Attachments",
-inputtype: "all",
-outputfile: "all",
-fileexportformat: "all",
-type: "original",
-guid: "original",
-onimport: "original",
-ordering: "01",
-display: "01",
-singlepage: "01"
-},
--{
-id: "0",
-name: "Original Format",
-inputtype: "all",
-outputfile: "all",
-fileexportformat: "all",
-type: "original",
-guid: "original",
-onimport: "original",
-ordering: "00",
-display: "00",
-singlepage: "00"
-}
-]
-}
-
+        {
+            totalhits: 15,
+            searchtype: "convertpreset",
+            page: 1,
+            results: [
+                -{
+                    id: "previewffmpegthumb",
+                    name: "Video Thumb",
+                    inputtype: "video",
+                    outputfile: "image1024x768.jpg",
+                    fileexportformat: "${filename}1024x768.jpg",
+                    type: "ffmpegimage",
+                    guid: "previewffmpegthumb",
+                    onimport: "true",
+                    ordering: "10",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "1",
+                    name: "Video HQ MP4",
+                    inputtype: "video",
+                    outputfile: "video1080p.mp4",
+                    fileexportformat: "${filename}1080p.mp4",
+                    type: "ffmpeg",
+                    guid: "ffmpeg1080p",
+                    onimport: "ffmpeg1080p",
+                    ordering: "09",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "2",
+                    name: "Video HQ AVI",
+                    inputtype: "video",
+                    outputfile: "video720p.avi",
+                    fileexportformat: "${filename}HQ.avi",
+                    type: "ffmpeg",
+                    guid: "ffmpeg720p",
+                    onimport: "ffmpeg720p",
+                    ordering: "08",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "previewflv",
+                    name: "Video FLV",
+                    inputtype: "video",
+                    outputfile: "preview.flv",
+                    fileexportformat: "${filename}.flv",
+                    type: "ffmpeg",
+                    guid: "ffmpegpreviewmp4",
+                    onimport: "ffmpegpreviewmp4",
+                    ordering: "07",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "imagepreviewfpo",
+                    name: "Image Large FPO",
+                    inputtype: "image",
+                    outputfile: "image1024x768wm.jpg",
+                    fileexportformat: "${filename}1024x768-fpo.jpg",
+                    type: "imagemagick",
+                    guid: "imagepreviewfpo",
+                    onimport: "false",
+                    ordering: "06",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "mp3audio",
+                    name: "Mp3 Audio",
+                    inputtype: "audio",
+                    outputfile: "audio.mp3",
+                    fileexportformat: "${filename}.mp3",
+                    type: "audio",
+                    guid: "mp3audio",
+                    onimport: "true",
+                    ordering: "06",
+                    display: "06",
+                    singlepage: "06"
+                },
+                {
+                    id: "previewffmpeg",
+                    name: "Video MP4 Preview",
+                    inputtype: "video",
+                    outputfile: "video.mp4",
+                    fileexportformat: "${filename}proxy.mp4",
+                    type: "ffmpeg",
+                    guid: "ffmpeg480p",
+                    onimport: "true",
+                    ordering: "06",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "cropdocument",
+                    name: "Document Crop",
+                    inputtype: "document",
+                    outputfile: "image110x62cropped.jpg",
+                    fileexportformat: "${filename}110x62cropped.jpg",
+                    type: "imagemagick",
+                    guid: "imagecrop",
+                    onimport: "true",
+                    ordering: "05",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "imagecrop",
+                    name: "Small Crop",
+                    inputtype: "image",
+                    outputfile: "image110x62cropped.jpg",
+                    fileexportformat: "${filename}110x62cropped.jpg",
+                    type: "imagemagick",
+                    guid: "imagecrop",
+                    onimport: "true",
+                    ordering: "05",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "largedocument",
+                    name: "Document Preview",
+                    inputtype: "document",
+                    outputfile: "image1024x768.jpg",
+                    fileexportformat: "${filename}.jpg",
+                    type: "imagemagick",
+                    guid: "imagepreview",
+                    onimport: "true",
+                    ordering: "04",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "thumbimage",
+                    name: "Image Thumbnail",
+                    inputtype: "image",
+                    outputfile: "image200x200.jpg",
+                    fileexportformat: "${filename}200x200.jpg",
+                    type: "imagemagick",
+                    guid: "imagethumb",
+                    onimport: "true",
+                    ordering: "04",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "mediumimage",
+                    name: "Image Medium",
+                    inputtype: "image",
+                    outputfile: "image550x350.jpg",
+                    fileexportformat: "${filename}550x350.jpg",
+                    type: "imagemagick",
+                    guid: "imagemedium",
+                    onimport: "true",
+                    ordering: "03",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "largeimage",
+                    name: "Image Large",
+                    inputtype: "image",
+                    outputfile: "image1024x768.jpg",
+                    fileexportformat: "${filename}1024x768.jpg",
+                    type: "imagemagick",
+                    guid: "imagepreview",
+                    onimport: "true",
+                    ordering: "02",
+                    display: "true",
+                    singlepage: "true"
+                },
+                {
+                    id: "attachments",
+                    name: "Attachments",
+                    inputtype: "all",
+                    outputfile: "all",
+                    fileexportformat: "all",
+                    type: "original",
+                    guid: "original",
+                    onimport: "original",
+                    ordering: "01",
+                    display: "01",
+                    singlepage: "01"
+                },
+                {
+                    id: "0",
+                    name: "Original Format",
+                    inputtype: "all",
+                    outputfile: "all",
+                    fileexportformat: "all",
+                    type: "original",
+                    guid: "original",
+                    onimport: "original",
+                    ordering: "00",
+                    display: "00",
+                    singlepage: "00"
+                }
+            ]
+        }
 
 
 
